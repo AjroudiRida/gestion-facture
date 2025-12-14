@@ -9,9 +9,7 @@
     "gestion-facture": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "inlineTemplate": true
-        }
+        "@schematics/angular:component": {}
       },
       "root": "",
       "sourceRoot": "src",

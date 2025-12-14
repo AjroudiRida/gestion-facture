@@ -1,0 +1,178 @@
+/* ========================================
+   Client Detail - Google Contacts Style
+   ======================================== */
+
+.detail-client-page {
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e8eaed;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6368;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background: #f1f3f4;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6368;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: #f1f3f4;
+}
+
+.nav-btn.delete:hover {
+    background: #fce8e6;
+    color: #d93025;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem 2rem;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.avatar {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a73e8;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 400;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.client-name {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #202124;
+    margin: 0;
+    text-align: center;
+}
+
+/* Details Section */
+.details-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    cursor: default;
+    transition: background 0.2s ease;
+}
+
+.detail-row:hover {
+    background: #f8f9fa;
+}
+
+.detail-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6368;
+    flex-shrink: 0;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding-top: 0.5rem;
+}
+
+.detail-value {
+    font-size: 0.9375rem;
+    color: #202124;
+    line-height: 1.4;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    color: #5f6368;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .profile-section {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+
+    .client-name {
+        font-size: 1.5rem;
+    }
+
+    .details-section {
+        padding: 0.5rem 0;
+    }
+
+    .detail-row {
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+
+    .detail-icon {
+        width: 32px;
+        height: 32px;
+    }
+}

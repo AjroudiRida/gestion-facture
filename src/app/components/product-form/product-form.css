@@ -1,0 +1,220 @@
+/* ========================================
+   Product Form - Pastel Minimalistic Style
+   ======================================== */
+
+:host {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Card Container */
+.product-form-card {
+    background: linear-gradient(145deg, #fdfbfb 0%, #f8f6fc 100%);
+    border-radius: 24px;
+    box-shadow:
+        0 10px 40px -10px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.form-header {
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, #e8dff5 0%, #fce4ec 50%, #ffecd2 100%);
+}
+
+.header-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    color: #9575cd;
+    box-shadow: 0 4px 12px rgba(149, 117, 205, 0.15);
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3d3852;
+    margin: 0 0 0.375rem;
+    letter-spacing: -0.02em;
+}
+
+.form-subtitle {
+    font-size: 0.875rem;
+    color: #7a7490;
+    margin: 0;
+}
+
+/* Form Content */
+.form-content {
+    padding: 1.75rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #5a5470;
+    letter-spacing: 0.01em;
+}
+
+.required {
+    color: #f48fb1;
+    margin-left: 2px;
+}
+
+/* Input Styles */
+.form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    color: #3d3852;
+    background: #ffffff;
+    border: 2px solid #ebe7f3;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #b8b3c8;
+}
+
+.form-input:hover {
+    border-color: #d4cae8;
+}
+
+.form-input:focus {
+    border-color: #b39ddb;
+    box-shadow: 0 0 0 4px rgba(179, 157, 219, 0.15);
+}
+
+/* Textarea */
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+    line-height: 1.5;
+}
+
+/* Price Input */
+.price-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 1rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #9575cd;
+    pointer-events: none;
+}
+
+.price-input {
+    padding-left: 2.25rem;
+}
+
+/* Hide number spinners */
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #ffffff;
+    background: linear-gradient(135deg, #b39ddb 0%, #f48fb1 50%, #ffcc80 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 4px 15px rgba(179, 157, 219, 0.35),
+        0 2px 6px rgba(244, 143, 177, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(179, 157, 219, 0.4),
+        0 4px 10px rgba(244, 143, 177, 0.25);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn svg {
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .product-form-card {
+        border-radius: 20px;
+    }
+
+    .form-header {
+        padding: 1.5rem 1.5rem 1.25rem;
+    }
+
+    .form-content {
+        padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .header-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .form-title {
+        font-size: 1.25rem;
+    }
+}

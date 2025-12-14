@@ -1,0 +1,123 @@
+<div class="detail-facture-page">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <a routerLink="/factures" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
+        <h1 class="nav-title">Facture {{ facture.numero }}</h1>
+        <button class="edit-btn" (click)="editFacture()">Modifier</button>
+    </div>
+
+    <!-- Invoice Content -->
+    <div class="detail-content">
+        <!-- Status Badge -->
+        <div class="status-section">
+            <span class="status-badge" [class]="'status-' + facture.statut">{{ facture.statut }}</span>
+        </div>
+
+        <!-- Invoice Info -->
+        <div class="info-section">
+            <!-- Client -->
+            <div class="info-row">
+                <div class="row-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="row-content">
+                    <span class="info-label">Client</span>
+                    <span class="info-value">{{ clientName }}</span>
+                </div>
+            </div>
+
+            <!-- Creation Date -->
+            <div class="info-row">
+                <div class="row-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="row-content">
+                    <span class="info-label">Date de création</span>
+                    <span class="info-value">{{ facture.dateCreation | date:'dd MMMM yyyy' }}</span>
+                </div>
+            </div>
+
+            <!-- Due Date -->
+            @if (facture.dateEcheance) {
+            <div class="info-row">
+                <div class="row-icon due-date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <div class="row-content">
+                    <span class="info-label">Date d'échéance</span>
+                    <span class="info-value">{{ facture.dateEcheance | date:'dd MMMM yyyy' }}</span>
+                </div>
+            </div>
+            }
+        </div>
+
+        <!-- Products Section -->
+        <div class="products-section">
+            <h2 class="section-title">Produits</h2>
+            <div class="products-table">
+                <div class="table-header">
+                    <span class="col-product">Produit</span>
+                    <span class="col-qty">Qté</span>
+                    <span class="col-price">Prix unit.</span>
+                    <span class="col-total">Total</span>
+                </div>
+                @for (ligne of lignes; track $index) {
+                <div class="table-row">
+                    <span class="col-product">{{ ligne.designation }}</span>
+                    <span class="col-qty">{{ ligne.quantite }}</span>
+                    <span class="col-price">{{ ligne.prixUnitaire | number:'1.2-2' }} €</span>
+                    <span class="col-total">{{ ligne.montant | number:'1.2-2' }} €</span>
+                </div>
+                }
+            </div>
+        </div>
+
+        <!-- Totals Section -->
+        <div class="totals-section">
+            <div class="total-row">
+                <span class="total-label">Sous-total</span>
+                <span class="total-value">{{ facture.sousTotal | number:'1.2-2' }} €</span>
+            </div>
+            <div class="total-row">
+                <span class="total-label">TVA ({{ facture.tauxTva }}%)</span>
+                <span class="total-value">{{ getTvaAmount() | number:'1.2-2' }} €</span>
+            </div>
+            <div class="total-row grand-total">
+                <span class="total-label">Total TTC</span>
+                <span class="total-value">{{ facture.total | number:'1.2-2' }} €</span>
+            </div>
+        </div>
+
+        <!-- Delete Button -->
+        <div class="danger-zone">
+            <button class="delete-btn" (click)="removeFacture()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+                Supprimer cette facture
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="product-form-card">
+    <!-- Header -->
+    <div class="form-header">
+        <div class="header-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+        </div>
+        <h2 class="form-title">Nouveau Produit</h2>
+        <p class="form-subtitle">Ajoutez un nouveau produit à votre catalogue</p>
+    </div>
+
+    <!-- Form -->
+    <form (ngSubmit)="addProduct()" class="form-content">
+        <!-- Nom Field -->
+        <div class="form-group">
+            <label for="nom" class="form-label">
+                Nom du produit
+                <span class="required">*</span>
+            </label>
+            <input id="nom" [(ngModel)]="newProduct.nom" name="nom" type="text" placeholder="Ex: T-shirt Premium"
+                class="form-input">
+        </div>
+
+        <!-- Description Field -->
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" [(ngModel)]="newProduct.description" name="description"
+                placeholder="Décrivez votre produit..." rows="3" class="form-input form-textarea"></textarea>
+        </div>
+
+        <!-- Prix Field -->
+        <div class="form-group">
+            <label for="prix" class="form-label">
+                Prix
+                <span class="required">*</span>
+            </label>
+            <div class="price-wrapper">
+                <span class="currency-symbol">€</span>
+                <input id="prix" [(ngModel)]="newProduct.prix" name="prix" type="number" placeholder="0.00" step="0.01"
+                    min="0" class="form-input price-input">
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Enregistrer le produit
+        </button>
+    </form>
+</div>
