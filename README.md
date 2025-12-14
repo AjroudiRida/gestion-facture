@@ -1,59 +1,73 @@
-# GestionFacture
+# Gestion de Factures
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Application web de gestion de factures, produits et clients développée avec Angular.
 
-## Development server
+## 🌐 Démo en ligne
 
-To start a local development server, run:
+👉 **[https://gestion-facture-six.vercel.app/](https://gestion-facture-six.vercel.app/)**
+
+## ✨ Fonctionnalités
+
+### Gestion des Produits
+- Ajouter, modifier et supprimer des produits
+- Afficher les détails d'un produit
+- Liste des produits avec prix
+
+### Gestion des Clients
+- Ajouter, modifier et supprimer des clients
+- Informations complètes (nom, email, téléphone, adresse)
+- Liste des clients
+
+### Gestion des Factures
+- Créer de nouvelles factures
+- Sélectionner un client et ajouter des produits
+- Calcul automatique des totaux (sous-total, TVA, total TTC)
+- Statuts de facture : Brouillon, Envoyée, Payée, Annulée
+- Modifier et supprimer des factures
+- Historique des factures
+
+## 🛠️ Technologies utilisées
+
+- **Frontend** : Angular 19
+- **Base de données** : IndexedDB (Dexie.js)
+- **Styling** : CSS (Google Material Design Style)
+- **Déploiement** : Vercel
+
+## 🚀 Installation locale
 
 ```bash
+# Cloner le projet
+git clone https://github.com/AjroudiRida/gestion-facture.git
+
+# Accéder au dossier
+cd gestion-facture
+
+# Installer les dépendances
+npm install
+
+# Lancer l'application
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Ouvrez votre navigateur sur `http://localhost:4200`
 
-## Code scaffolding
+## 📁 Structure du projet
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/app/
+├── Models/           # Interfaces TypeScript
+├── components/       # Composants réutilisables
+├── pages/           # Pages de l'application
+│   ├── factures/
+│   ├── clients/
+│   └── produits/
+└── services/        # Services (DatabaseService)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 👤 Auteur
 
-```bash
-ng generate --help
-```
+**Rida Ajroudi**
 
-## Building
+---
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+⭐ N'hésitez pas à mettre une étoile si ce projet vous a été utile !
