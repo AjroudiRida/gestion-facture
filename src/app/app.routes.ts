@@ -17,7 +17,7 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        component: Main,
+        component: Factures,
     },
     {
         path: 'produits',
